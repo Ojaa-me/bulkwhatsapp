@@ -1,31 +1,5 @@
-import pyautogui as pg
-import webbrowser as web
-import time
-import pandas as pd
-import json
-
-broadcast=""
-# data = pd.read_csv("contacts.csv")
-# data_dict = data.to_dict('list')
-# leads = data_dict['LeadNumber']
-# messages = data_dict['Message']
-usernames=[]
-userphones=[]
-with open('new.json') as json_file:
-    data = json.load(json_file)
-    for u in data:
-        usernames.append(u['username'])
-    for p in data:
-        userphones.append(u['userphone'])
-
-
-combo = zip(usernames,userphones)
-first = True
-for username,userphone in combo:
-    time.sleep(10)
-    web.open("https://web.whatsapp.com/send?phone="+str(userphone.replace('0', "+234", 1))+"&text="+"""
 Hello.
-Good evening {}
+Good evening name
  I'm Theophilus from ojaa.me.
 I got your number from olist.
  I run an online market place known as ojaa.me.
@@ -55,13 +29,3 @@ Click https://ojaa.me/create/form
 Fill all the required information and come back to tell me thanks.
 Because it will really help your business.
  And don't hesitate to share your new website link with others
-""".format(username))
-    if first:
-        time.sleep(6)
-        first=False
-    width,height = pg.size()
-    pg.click(width/2,height/2)
-    time.sleep(8)
-    pg.press('enter')
-    time.sleep(8)
-    pg.hotkey('ctrl', 'w')
