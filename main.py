@@ -6,15 +6,17 @@ import json
 
 usernames=[]
 userphones=[]
-with open('new.json') as json_file:
+
+with open('unique_olist.json') as json_file:
     data = json.load(json_file)
-    for u in data:
+    for u in data[:50]:
         usernames.append(u['username'])
     for p in data:
         userphones.append(u['userphone'])
 
 combo = zip(usernames,userphones)
 first = True
+no=1
 for username,userphone in combo:
     time.sleep(10)
     file = open("sample.txt")
@@ -29,4 +31,6 @@ for username,userphone in combo:
     pg.press('enter')
     time.sleep(8)
     pg.press('enter')
+    no+=1
+    print(no)
     pg.hotkey('ctrl', 'w')
