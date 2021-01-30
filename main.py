@@ -4,11 +4,6 @@ import time
 import pandas as pd
 import json
 
-broadcast=""
-# data = pd.read_csv("contacts.csv")
-# data_dict = data.to_dict('list')
-# leads = data_dict['LeadNumber']
-# messages = data_dict['Message']
 usernames=[]
 userphones=[]
 with open('new.json') as json_file:
