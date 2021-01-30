@@ -6,7 +6,6 @@ import json
 
 usernames=[]
 userphones=[]
-
 with open('unique_olist.json') as json_file:
     data = json.load(json_file)
     for u in data[:50]:
