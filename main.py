@@ -6,16 +6,16 @@ import json
 
 usernames=[]
 userphones=[]
-with open('unique_olist.json') as json_file:
+with open('new.json') as json_file:
     data = json.load(json_file)
     for u in data[:50]:
         usernames.append(u['username'])
     for p in data:
-        userphones.append(u['userphone'])
+        userphones.append(p['userphone'])
 
 combo = zip(usernames,userphones)
 first = True
-no=1
+no=0
 for username,userphone in combo:
     time.sleep(10)
     file = open("sample.txt")
