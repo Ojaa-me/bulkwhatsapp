@@ -4,10 +4,15 @@ import time
 import pandas as pd
 import json
 
+
+#initialized  lists to store usernames and numbers inother to zip them and loop through them simultaneausly and respectively
 usernames=[]
 userphones=[]
-with open('new.json') as json_file:
+
+# opened json file consisting of names and contact of potential vendors
+with open('unique_olist.json') as json_file:
     data = json.load(json_file)
+    # in other for there to be a break filterd the first 50 contacts should only be sent invitation messages 
     for u in data[:50]:
         usernames.append(u['username'])
     for p in data:
