@@ -13,11 +13,11 @@ with open('new.json') as json_file:
     for p in data:
         userphones.append(u['userphone'])
 
-file = open("sample.txt")
 combo = zip(usernames,userphones)
 first = True
 for username,userphone in combo:
     time.sleep(10)
+    file = open("sample.txt")
     web.open("https://web.whatsapp.com/send?phone="+str(userphone.replace('0', "+234", 1))+"&text="+file.read().replace("name", username)
 )
     if first:
@@ -28,4 +28,5 @@ for username,userphone in combo:
     time.sleep(8)
     pg.press('enter')
     time.sleep(8)
+    pg.press('enter')
     pg.hotkey('ctrl', 'w')
