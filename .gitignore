@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/unique_olist.json
+unique_olist.json/
+unique_olist.json
